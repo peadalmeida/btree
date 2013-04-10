@@ -1,0 +1,477 @@
+\hypertarget{Functions_8c}{\section{Referência do Arquivo Functions.\-c}
+\label{Functions_8c}\index{Functions.\-c@{Functions.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}btree.\-h\char`\"{}}\\*
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Functions_8c_a950eeb6cd58beefbfdf49afcd34f3bbb}{Parse\-String} (char $\ast$string)
+\item 
+void \hyperlink{Functions_8c_a1d796754d58ec2a74c38b9d984a39412}{Initialize} (\hyperlink{structPage}{Page} $\ast$page)
+\begin{DoxyCompactList}\small\item\em Inicializa a nova página. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a1b64d2b13656e46dc7f836afeac5826a}{Write\-Page} (\hyperlink{structPage}{Page} $\ast$page, long R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Escreve a página em disco. \end{DoxyCompactList}\item 
+\hyperlink{structPage}{Page} $\ast$ \hyperlink{Functions_8c_a2da5bee5e43be4c9b873caf29fb80ab5}{get\-Page} (long R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Retorna um ponteiro para uma página específica. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_af61102716608dd0fffd0c2ad16c3a32a}{Write\-Index} ()
+\begin{DoxyCompactList}\small\item\em Cria uma referência para o index da página. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_a11de8c1c8661b473d3b58dc0c182cf15}{Driver} ()
+\begin{DoxyCompactList}\small\item\em Abre uma Árvore-\/\-B no disco. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_a241a64a2dfbd4bb77986abac41cbfd2e}{Binary\-Search} (\hyperlink{structPage}{Page} $\ast$page, char $\ast$Key, int $\ast$found)
+\begin{DoxyCompactList}\small\item\em Busca Binária. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_a0cf1adec2c91ba7739434fc8433a853e}{Search\-Key} (long R\-R\-N, char $\ast$Key, long $\ast$F\-O\-U\-N\-D\-\_\-\-R\-R\-N, int $\ast$F\-O\-U\-N\-D\-\_\-\-P\-O\-S)
+\begin{DoxyCompactList}\small\item\em Busca de Chaves. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_aaf10a935468de6e5e1cb73d1f32c3b83}{Insert\-Key} (\hyperlink{structPage}{Page} $\ast$page, char $\ast$Key, long R\-\_\-\-S\-O\-N, long Data\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Inserir chave na árvore. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a606782e9db1706ca4d2e784716f1a8ad}{Split} (char $\ast$key, long r\-\_\-child, \hyperlink{structPage}{Page} $\ast$p\-\_\-oldpage, char $\ast$promo\-\_\-key, long $\ast$promo\-\_\-r\-\_\-child, \hyperlink{structPage}{Page} $\ast$p\-\_\-newpage, long $\ast$Data\-R\-R\-N\-Promoted)
+\begin{DoxyCompactList}\small\item\em Função de split. \end{DoxyCompactList}\item 
+\hyperlink{structPage}{Page} $\ast$ \hyperlink{Functions_8c_abf816d56218412117215e93ad5f7db67}{create\-Root} (char $\ast$Key, long right, long left)
+\begin{DoxyCompactList}\small\item\em Criar nova raiz. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_a945bac18e709f1cd006fefec350a10e6}{Insert} (long Current\-R\-R\-N, char $\ast$Key, long Data\-R\-R\-N, long $\ast$P\-R\-O\-M\-O\-\_\-\-R\-\_\-\-C\-H\-I\-L\-D, char $\ast$P\-R\-O\-M\-O\-\_\-\-K\-E\-Y, long $\ast$Data\-R\-R\-N\-Promoted)
+\begin{DoxyCompactList}\small\item\em Procura uma página para inserir chave. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_abb9d9a517b75b4d82825db7520fa244b}{Driver\-Root} (char $\ast$Key, long Data\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Dispara a primeira chamada recursiva para inserir uma chave na árvore e trata as promoções na raiz. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a516b8c9f4ed210385513d53f7dc10e7a}{Organize} (\hyperlink{structPage}{Page} $\ast$page, int Position)
+\begin{DoxyCompactList}\small\item\em Organiza as chaves e os ponteiros de uma página dada. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a0a051ee6955fe9bb99999a46a3cc67d2}{Delete\-Page} (long $\ast$Problem\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Deleta página, apaga a referência. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a023be1653291bf2a761432199c92f4f3}{Driver\-Remove} (char $\ast$Key)
+\begin{DoxyCompactList}\small\item\em Dispara a primeira recursão. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_aacff69a0db328c6022c642281382d56e}{is\-Page\-Leaf} (\hyperlink{structPage}{Page} $\ast$page)
+\begin{DoxyCompactList}\small\item\em Teste se a página é folha ou não. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_afb1481b10901b5dcbd1fdffd7ea0032a}{Concatenate} (\hyperlink{structPage}{Page} $\ast$Current\-Page, long $\ast$Problem\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Concatenação. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_ab2129513329cf651eaade29fe7fcfd46}{Redistribution} (\hyperlink{structPage}{Page} $\ast$Current\-Page, long $\ast$Problem\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Função de redistribuição para o caso de remoção \#3. \end{DoxyCompactList}\item 
+int \hyperlink{Functions_8c_a7bef37730df92b293c33742a185f0f08}{Remove} (long Current\-R\-R\-N, char $\ast$Key, int $\ast$Troca, char $\ast$Chave\-Troca, \hyperlink{structPage}{Page} $\ast$Dad, int $\ast$Trocando, long $\ast$Problem\-R\-R\-N)
+\begin{DoxyCompactList}\small\item\em Função de remoção. \end{DoxyCompactList}\item 
+void \hyperlink{Functions_8c_a63c8aeba24f9894c28f75ac2469dc601}{printtree} (long t)
+\begin{DoxyCompactList}\small\item\em Função para fazer a impressão da Árvore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structIndex}{Index} $\ast$ \hyperlink{Functions_8c_a4226dcfaa2c609dcf3456da08bbb1cfa}{ind} = N\-U\-L\-L
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{Functions_8c_a111eca38b32f51bbd89ebdfe301395b2}{Btree} = N\-U\-L\-L
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{Functions_8c_a6e62fb11036ba03e13db129e1de5cbf1}{Data} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\hypertarget{Functions_8c_a241a64a2dfbd4bb77986abac41cbfd2e}{\index{Functions.\-c@{Functions.\-c}!Binary\-Search@{Binary\-Search}}
+\index{Binary\-Search@{Binary\-Search}!Functions.c@{Functions.\-c}}
+\subsubsection[{Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}int Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page, }
+\item[{char $\ast$}]{Key, }
+\item[{int $\ast$}]{found}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a241a64a2dfbd4bb77986abac41cbfd2e}
+
+
+Busca Binária. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em page} & Página \\
+\hline
+{\em $\ast$\-Key} & Chave a ser buscada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Chave do meio 
+\end{DoxyReturn}
+\hypertarget{Functions_8c_afb1481b10901b5dcbd1fdffd7ea0032a}{\index{Functions.\-c@{Functions.\-c}!Concatenate@{Concatenate}}
+\index{Concatenate@{Concatenate}!Functions.c@{Functions.\-c}}
+\subsubsection[{Concatenate}]{\setlength{\rightskip}{0pt plus 5cm}int Concatenate (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{Current\-Page, }
+\item[{long $\ast$}]{Problem\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_afb1481b10901b5dcbd1fdffd7ea0032a}
+
+
+Concatenação. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Current\-Page} & Página atual \\
+\hline
+{\em $\ast$\-Problem\-R\-R\-N} & R\-R\-N da página que precisa de tratamento \\
+\hline
+{\em Data\-R\-R\-N} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_abf816d56218412117215e93ad5f7db67}{\index{Functions.\-c@{Functions.\-c}!create\-Root@{create\-Root}}
+\index{create\-Root@{create\-Root}!Functions.c@{Functions.\-c}}
+\subsubsection[{create\-Root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page}$\ast$ create\-Root (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{Key, }
+\item[{long}]{right, }
+\item[{long}]{left}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_abf816d56218412117215e93ad5f7db67}
+
+
+Criar nova raiz. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Key} & Chave \\
+\hline
+{\em right} & Filho à direita \\
+\hline
+{\em left} & Filho à esquerda \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Raiz criada 
+\end{DoxyReturn}
+\hypertarget{Functions_8c_a0a051ee6955fe9bb99999a46a3cc67d2}{\index{Functions.\-c@{Functions.\-c}!Delete\-Page@{Delete\-Page}}
+\index{Delete\-Page@{Delete\-Page}!Functions.c@{Functions.\-c}}
+\subsubsection[{Delete\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void Delete\-Page (
+\begin{DoxyParamCaption}
+\item[{long $\ast$}]{Problem\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a0a051ee6955fe9bb99999a46a3cc67d2}
+
+
+Deleta página, apaga a referência. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Problem\-R\-R\-N} & R\-R\-N da página problemática \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a11de8c1c8661b473d3b58dc0c182cf15}{\index{Functions.\-c@{Functions.\-c}!Driver@{Driver}}
+\index{Driver@{Driver}!Functions.c@{Functions.\-c}}
+\subsubsection[{Driver}]{\setlength{\rightskip}{0pt plus 5cm}int Driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a11de8c1c8661b473d3b58dc0c182cf15}
+
+
+Abre uma Árvore-\/\-B no disco. 
+
+\hypertarget{Functions_8c_a023be1653291bf2a761432199c92f4f3}{\index{Functions.\-c@{Functions.\-c}!Driver\-Remove@{Driver\-Remove}}
+\index{Driver\-Remove@{Driver\-Remove}!Functions.c@{Functions.\-c}}
+\subsubsection[{Driver\-Remove}]{\setlength{\rightskip}{0pt plus 5cm}void Driver\-Remove (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{Key}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a023be1653291bf2a761432199c92f4f3}
+
+
+Dispara a primeira recursão. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Key} & Chave \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_abb9d9a517b75b4d82825db7520fa244b}{\index{Functions.\-c@{Functions.\-c}!Driver\-Root@{Driver\-Root}}
+\index{Driver\-Root@{Driver\-Root}!Functions.c@{Functions.\-c}}
+\subsubsection[{Driver\-Root}]{\setlength{\rightskip}{0pt plus 5cm}int Driver\-Root (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{Key, }
+\item[{long}]{Data\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_abb9d9a517b75b4d82825db7520fa244b}
+
+
+Dispara a primeira chamada recursiva para inserir uma chave na árvore e trata as promoções na raiz. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Key} & Chave a ser inserida \\
+\hline
+{\em Data\-R\-R\-N} & R\-R\-N do registro relativo a chave inserida na árvore presete no arquivo de dados \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a2da5bee5e43be4c9b873caf29fb80ab5}{\index{Functions.\-c@{Functions.\-c}!get\-Page@{get\-Page}}
+\index{get\-Page@{get\-Page}!Functions.c@{Functions.\-c}}
+\subsubsection[{get\-Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page}$\ast$ get\-Page (
+\begin{DoxyParamCaption}
+\item[{long}]{R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a2da5bee5e43be4c9b873caf29fb80ab5}
+
+
+Retorna um ponteiro para uma página específica. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em R\-R\-N} & R\-R\-N da página \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a1d796754d58ec2a74c38b9d984a39412}{\index{Functions.\-c@{Functions.\-c}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Functions.c@{Functions.\-c}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a1d796754d58ec2a74c38b9d984a39412}
+
+
+Inicializa a nova página. 
+
+\hypertarget{Functions_8c_a945bac18e709f1cd006fefec350a10e6}{\index{Functions.\-c@{Functions.\-c}!Insert@{Insert}}
+\index{Insert@{Insert}!Functions.c@{Functions.\-c}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}int Insert (
+\begin{DoxyParamCaption}
+\item[{long}]{Current\-R\-R\-N, }
+\item[{char $\ast$}]{Key, }
+\item[{long}]{Data\-R\-R\-N, }
+\item[{long $\ast$}]{P\-R\-O\-M\-O\-\_\-\-R\-\_\-\-C\-H\-I\-L\-D, }
+\item[{char $\ast$}]{P\-R\-O\-M\-O\-\_\-\-K\-E\-Y, }
+\item[{long $\ast$}]{Data\-R\-R\-N\-Promoted}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a945bac18e709f1cd006fefec350a10e6}
+
+
+Procura uma página para inserir chave. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em Current\-R\-R\-N} & R\-R\-N atual \\
+\hline
+{\em $\ast$\-Key} & Chave a ser inserida \\
+\hline
+{\em Data\-R\-R\-N} & R\-R\-N do registro relativo a chave inserida na árvore presete no arquivo de dados \\
+\hline
+{\em $\ast$\-P\-R\-O\-M\-O\-\_\-\-R\-\_\-\-C\-H\-I\-L\-D} & Filho promovido \\
+\hline
+{\em $\ast$\-P\-R\-O\-M\-O\-\_\-\-K\-E\-Y} & Chave promovida \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_aaf10a935468de6e5e1cb73d1f32c3b83}{\index{Functions.\-c@{Functions.\-c}!Insert\-Key@{Insert\-Key}}
+\index{Insert\-Key@{Insert\-Key}!Functions.c@{Functions.\-c}}
+\subsubsection[{Insert\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void Insert\-Key (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page, }
+\item[{char $\ast$}]{Key, }
+\item[{long}]{R\-\_\-\-S\-O\-N, }
+\item[{long}]{Data\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_aaf10a935468de6e5e1cb73d1f32c3b83}
+
+
+Inserir chave na árvore. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em page} & Página \\
+\hline
+{\em $\ast$\-Key} & Chave a ser inserida \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_aacff69a0db328c6022c642281382d56e}{\index{Functions.\-c@{Functions.\-c}!is\-Page\-Leaf@{is\-Page\-Leaf}}
+\index{is\-Page\-Leaf@{is\-Page\-Leaf}!Functions.c@{Functions.\-c}}
+\subsubsection[{is\-Page\-Leaf}]{\setlength{\rightskip}{0pt plus 5cm}int is\-Page\-Leaf (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_aacff69a0db328c6022c642281382d56e}
+
+
+Teste se a página é folha ou não. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$page} & Página que será testada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna se a página é folha ou não 
+\end{DoxyReturn}
+\hypertarget{Functions_8c_a516b8c9f4ed210385513d53f7dc10e7a}{\index{Functions.\-c@{Functions.\-c}!Organize@{Organize}}
+\index{Organize@{Organize}!Functions.c@{Functions.\-c}}
+\subsubsection[{Organize}]{\setlength{\rightskip}{0pt plus 5cm}void Organize (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page, }
+\item[{int}]{Position}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a516b8c9f4ed210385513d53f7dc10e7a}
+
+
+Organiza as chaves e os ponteiros de uma página dada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$page} & Página dada \\
+\hline
+{\em Position} & Posição \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a950eeb6cd58beefbfdf49afcd34f3bbb}{\index{Functions.\-c@{Functions.\-c}!Parse\-String@{Parse\-String}}
+\index{Parse\-String@{Parse\-String}!Functions.c@{Functions.\-c}}
+\subsubsection[{Parse\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Parse\-String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a950eeb6cd58beefbfdf49afcd34f3bbb}
+\hypertarget{Functions_8c_a63c8aeba24f9894c28f75ac2469dc601}{\index{Functions.\-c@{Functions.\-c}!printtree@{printtree}}
+\index{printtree@{printtree}!Functions.c@{Functions.\-c}}
+\subsubsection[{printtree}]{\setlength{\rightskip}{0pt plus 5cm}void printtree (
+\begin{DoxyParamCaption}
+\item[{long}]{t}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a63c8aeba24f9894c28f75ac2469dc601}
+
+
+Função para fazer a impressão da Árvore. 
+
+\hypertarget{Functions_8c_ab2129513329cf651eaade29fe7fcfd46}{\index{Functions.\-c@{Functions.\-c}!Redistribution@{Redistribution}}
+\index{Redistribution@{Redistribution}!Functions.c@{Functions.\-c}}
+\subsubsection[{Redistribution}]{\setlength{\rightskip}{0pt plus 5cm}int Redistribution (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{Current\-Page, }
+\item[{long $\ast$}]{Problem\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_ab2129513329cf651eaade29fe7fcfd46}
+
+
+Função de redistribuição para o caso de remoção \#3. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$\-Current\-Page} & Página atual \\
+\hline
+{\em $\ast$\-Problem\-R\-R\-N} & R\-R\-N da página que precisa ser tratada \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a7bef37730df92b293c33742a185f0f08}{\index{Functions.\-c@{Functions.\-c}!Remove@{Remove}}
+\index{Remove@{Remove}!Functions.c@{Functions.\-c}}
+\subsubsection[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}int Remove (
+\begin{DoxyParamCaption}
+\item[{long}]{Current\-R\-R\-N, }
+\item[{char $\ast$}]{Key, }
+\item[{int $\ast$}]{Troca, }
+\item[{char $\ast$}]{Chave\-Troca, }
+\item[{{\bf Page} $\ast$}]{Dad, }
+\item[{int $\ast$}]{Trocando, }
+\item[{long $\ast$}]{Problem\-R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a7bef37730df92b293c33742a185f0f08}
+
+
+Função de remoção. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em Current\-R\-R\-N} & R\-R\-N atual \\
+\hline
+{\em $\ast$\-Key} & Chave a ser removida \\
+\hline
+{\em $\ast$\-Troca} & Armazena a posição de troca \\
+\hline
+{\em $\ast$\-Chave\-Troca} & Armazena sucessor \\
+\hline
+{\em $\ast$\-Dad} & Página Pai \\
+\hline
+{\em $\ast$\-Trocando} & Flag indicadora de procura/troca \\
+\hline
+{\em $\ast$\-Problem\-R\-R\-N} & Ponteiro para a página que precisa de tratamento \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_a0cf1adec2c91ba7739434fc8433a853e}{\index{Functions.\-c@{Functions.\-c}!Search\-Key@{Search\-Key}}
+\index{Search\-Key@{Search\-Key}!Functions.c@{Functions.\-c}}
+\subsubsection[{Search\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int Search\-Key (
+\begin{DoxyParamCaption}
+\item[{long}]{R\-R\-N, }
+\item[{char $\ast$}]{Key, }
+\item[{long $\ast$}]{F\-O\-U\-N\-D\-\_\-\-R\-R\-N, }
+\item[{int $\ast$}]{F\-O\-U\-N\-D\-\_\-\-P\-O\-S}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a0cf1adec2c91ba7739434fc8433a853e}
+
+
+Busca de Chaves. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em R\-R\-N} & R\-R\-N da página \\
+\hline
+{\em $\ast$\-Key} & Chave a ser buscada \\
+\hline
+{\em $\ast$\-F\-O\-U\-N\-D\-\_\-\-R\-R\-N} & R\-N\-N da página encontrado \\
+\hline
+{\em $\ast$\-F\-O\-U\-N\-D\-\_\-\-P\-O\-S} & Posição da Chave \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+N\-U\-L\-L se o R\-R\-N for nulo ou a chave buscada junto com a posição 
+\end{DoxyReturn}
+\hypertarget{Functions_8c_a606782e9db1706ca4d2e784716f1a8ad}{\index{Functions.\-c@{Functions.\-c}!Split@{Split}}
+\index{Split@{Split}!Functions.c@{Functions.\-c}}
+\subsubsection[{Split}]{\setlength{\rightskip}{0pt plus 5cm}void Split (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{long}]{r\-\_\-child, }
+\item[{{\bf Page} $\ast$}]{p\-\_\-oldpage, }
+\item[{char $\ast$}]{promo\-\_\-key, }
+\item[{long $\ast$}]{promo\-\_\-r\-\_\-child, }
+\item[{{\bf Page} $\ast$}]{p\-\_\-newpage, }
+\item[{long $\ast$}]{Data\-R\-R\-N\-Promoted}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a606782e9db1706ca4d2e784716f1a8ad}
+
+
+Função de split. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$key} & Chave \\
+\hline
+{\em mid} & Diz aonde o split vai ocorrer \\
+\hline
+{\em $\ast$promo\-\_\-key} & Chave promovida \\
+\hline
+\end{DoxyParams}
+\hypertarget{Functions_8c_af61102716608dd0fffd0c2ad16c3a32a}{\index{Functions.\-c@{Functions.\-c}!Write\-Index@{Write\-Index}}
+\index{Write\-Index@{Write\-Index}!Functions.c@{Functions.\-c}}
+\subsubsection[{Write\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Write\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_af61102716608dd0fffd0c2ad16c3a32a}
+
+
+Cria uma referência para o index da página. 
+
+\hypertarget{Functions_8c_a1b64d2b13656e46dc7f836afeac5826a}{\index{Functions.\-c@{Functions.\-c}!Write\-Page@{Write\-Page}}
+\index{Write\-Page@{Write\-Page}!Functions.c@{Functions.\-c}}
+\subsubsection[{Write\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void Write\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page, }
+\item[{long}]{R\-R\-N}
+\end{DoxyParamCaption}
+)}}\label{Functions_8c_a1b64d2b13656e46dc7f836afeac5826a}
+
+
+Escreve a página em disco. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em page} & Nova página \\
+\hline
+{\em R\-R\-N} & da nova página \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variáveis}
+\hypertarget{Functions_8c_a111eca38b32f51bbd89ebdfe301395b2}{\index{Functions.\-c@{Functions.\-c}!Btree@{Btree}}
+\index{Btree@{Btree}!Functions.c@{Functions.\-c}}
+\subsubsection[{Btree}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ Btree = N\-U\-L\-L}}\label{Functions_8c_a111eca38b32f51bbd89ebdfe301395b2}
+\hypertarget{Functions_8c_a6e62fb11036ba03e13db129e1de5cbf1}{\index{Functions.\-c@{Functions.\-c}!Data@{Data}}
+\index{Data@{Data}!Functions.c@{Functions.\-c}}
+\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ Data = N\-U\-L\-L}}\label{Functions_8c_a6e62fb11036ba03e13db129e1de5cbf1}
+\hypertarget{Functions_8c_a4226dcfaa2c609dcf3456da08bbb1cfa}{\index{Functions.\-c@{Functions.\-c}!ind@{ind}}
+\index{ind@{ind}!Functions.c@{Functions.\-c}}
+\subsubsection[{ind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Index}$\ast$ ind = N\-U\-L\-L}}\label{Functions_8c_a4226dcfaa2c609dcf3456da08bbb1cfa}
