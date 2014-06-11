@@ -12,10 +12,13 @@ Compile and run
 
 ##### 1 - Compile with gcc (GNU C Compiler):
 
-Usage:
+Make B-Tree:
 
-    make Makefile
+    make
 
+Clean data:
+
+    make clean
 
 Options:
 
@@ -30,6 +33,6 @@ Options:
 Requirements
 --------------
 
-- gcc (GNU C Compiler)
+- GCC (GNU C Compiler)
 - Ubuntu/Linux
 
