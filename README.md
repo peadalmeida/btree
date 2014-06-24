@@ -12,9 +12,13 @@ Compile and run
 
 ##### 1 - Compile with gcc (GNU C Compiler):
 
-Make B-Tree:
+Make B-Tree (Linux):
 
     make
+
+Make B-Tree (Mac):
+
+    make mac
 
 Clean data:
 
@@ -35,4 +39,3 @@ Requirements
 
 - GCC (GNU C Compiler)
 - Ubuntu/Linux
-
